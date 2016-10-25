@@ -11,10 +11,8 @@ from rfa_utils import get_log, qaprint
 def testcase_01():
     ''' Print message in log file - logginer
     '''
-    log_dir = 'logs'
-    test_name = 'assignment_01'
-    log = get_log(log_dir, test_name)
-    # Write message in log file
+    kwargs = {'log_dir': 'logs', 'log_name': 'assignment_01'}
+    log = get_log(**kwargs)
     message = "It is working, right?"
     log.info(message)
 
