@@ -5,7 +5,7 @@ Created on Oct 20, 2016
 @author: korvinca
 '''
 
-from rfa_utils import get_log, qaprint
+from rfa_utils import get_log, qaprint, get_log_v1
 
 
 def testcase_01():
@@ -19,8 +19,9 @@ def testcase_01():
 def testcase_02():
     ''' Print message in log file - create file in append mode
     '''
+    log = get_log_v1()
     message = "It is working, right?\n"
-    qaprint(message)
+    qaprint(log, message)
 
 if __name__ == '__main__':
     pass
