@@ -44,7 +44,7 @@ def get_log(log_dir=None, log_name=None):
         return -1
     return log
 
-def _get_log_v1(log_dir=None, log_name=None):
+def get_log_v1(log_dir=None, log_name=None):
     """ creates a log file and returns file handler
     """
 
@@ -68,13 +68,12 @@ def _get_log_v1(log_dir=None, log_name=None):
         return False
     return log
 
-def qaprint(in_msg):
+def qaprint(log, in_msg):
     """ prints message and writs message to the log file
     """
-    logfile = _get_log_v1()
     date_time = get_cur_time(sec=True)
     log_msg = " : ".join([date_time, in_msg])
-    logfile.write(log_msg)
+    log.write(log_msg)
     print log_msg
 
 def get_cur_time(sec=None):
