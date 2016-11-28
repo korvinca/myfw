@@ -130,6 +130,14 @@ def checkEnv():
         print err
         return -1
 
+def check_ping(server_URL):
+    response = os.system("ping -c 1 " + server_URL)
+    # and then check the response...
+    if response == 0:
+        return True
+    else:
+        return -1
+
 def getLog(testName, logDir):
     """
     Creates logDir directory, if it doesn't exist,
